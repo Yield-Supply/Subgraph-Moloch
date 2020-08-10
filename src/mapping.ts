@@ -1,4 +1,4 @@
-import { BigInt, Bytes, EthereumBlock, Address } from "@graphprotocol/graph-ts";
+import { BigInt, Bytes } from "@graphprotocol/graph-ts";
 import {
   Moloch,
   SummonComplete,
@@ -8,15 +8,15 @@ import {
   Ragequit,
   Abort,
   UpdateDelegateKey
-} from "./types/Moloch/Moloch";
+} from "../generated/Moloch/Moloch";
 import {
   AddKeepers,
   RemoveKeepers,
   Sync,
   SharesMinted,
   SharesBurned,
-} from "./types/MolochPool/MolochPool";
-import { Proposal, Member, Vote, Applicant, PoolMember, PoolMeta, Meta } from "./types/schema";
+} from "../generated/MolochPool/MolochPool";
+import { Proposal, Member, Vote, Applicant, PoolMember, PoolMeta, Meta } from "../generated/schema";
 
 export function handleSummonComplete(event: SummonComplete): void {
   let member = new Member(event.params.summoner.toHex());
