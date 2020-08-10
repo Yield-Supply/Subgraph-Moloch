@@ -1,14 +1,13 @@
 {
-  "name": "moloch-subgraph",
+  "name": "molochsubgraph",
   "version": "0.1.0",
   "scripts": {
-    "build-contract": "solc contracts/Counter.sol --abi -o abis --overwrite && solc contracts/Counter.sol --bin -o bin --overwrite",
-    "create": "graph create MolochVentures/moloch --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create MolochVentures/moloch --node http://127.0.0.1:8020",
-    "codegen": "graph codegen --debug --output-dir src/types/",
-    "build": "graph build --debug",
-    "deploy": "graph deploy MolochVentures/moloch --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy MolochVentures/moloch --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ crazyrabbitltc/molochsubgraph",
+    "create-local": "graph create --node http://localhost:8020/ crazyrabbitltc/molochsubgraph",
+    "remove-local": "graph remove --node http://localhost:8020/ crazyrabbitltc/molochsubgraph",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 crazyrabbitltc/molochsubgraph"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.17.1",
